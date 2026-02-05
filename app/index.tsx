@@ -1,25 +1,23 @@
-import {View , Text , StyleSheet} from 'react-native'
+import { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+
+import LoginScreen from './screens/LoginScreen';
+
+
+export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <View style={styles.container}>
+      (
+        <LoginScreen onLogin={() => setIsLoggedIn(true)} />
+      )
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: '600',
   },
 });
-
-export default function App(){
-  return (
-   <View style={styles.container}>
-    <Text style={styles.text}>
-        Welcome qween Aqdar
-    </Text>
-   
-   </View>
-
-  )
-}
